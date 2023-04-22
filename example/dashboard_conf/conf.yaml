@@ -81,6 +81,7 @@ plugins:                          # plugin list (sorted in alphabetical order)
   - http-logger
   - ip-restriction
   - jwt-auth
+  - jwt-auth-auto-refresh
   - kafka-logger
   - key-auth
   - limit-conn

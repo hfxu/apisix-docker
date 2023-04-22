@@ -33,6 +33,7 @@ services:
     restart: always
     volumes:
       - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
+      - ./apisix/plugins/jwt-auth-auto-refresh.lua:/usr/local/apisix/apisix/plugins/jwt-auth-auto-refresh.lua
     depends_on:
       - etcd
     ##network_mode: host
@@ -44,7 +45,6 @@ services:
       - "9092:9092/tcp"
     networks:
       apisix:
-
   etcd:
     image: bitnami/etcd:3.4.15
     restart: always
